@@ -1,15 +1,21 @@
 <template>
   <main>
+    <div class="overlay">
+      <div class="modal">
+        <p class="close-button">x</p>
+        <textarea></textarea>
+        <button>Add Note</button>
+      </div>
+    </div>
     <div class="container">
       <header>
         <h1>Notes</h1>
         <button>+</button>
       </header>
       <div class="cards-container">
-        <div class="card">
-          <p class="main-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore corporis omnis
-            laboriosam dicta dignissimos pariatur, cumque quis. Obcaecati, provident possimus.</p>
-          <p class="date">04/27/2024</p>
+        <div>
+          <p class="main-text"></p>
+          <p class="date"></p>
         </div>
       </div>
     </div>
@@ -17,15 +23,40 @@
 </template>
 
 <style scoped>
-main {
-  height: 100vh;
-  width: 100vw;
-}
-
 .container {
   max-width: 1000px;
   padding: 10px;
-  margin: 0 auto;
+  margin: 0 auto
+}
+
+h1 {
+  font-weight: bold;
+  margin-bottom: 25px;
+  font-size: 75px;
+}
+
+.card {
+  width: 225px;
+  height: 225px;
+  background-color: rgb(237, 182, 44);
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.main-text {
+  line-height: 1.25;
+  font-size: 17.5px;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 12.5px;
+  margin-top: auto;
 }
 
 header {
@@ -34,43 +65,86 @@ header {
   align-items: center;
 }
 
-h1 {
-  font-weight: bold;
-  margin-bottom: 25px;
-  font-size: 3.5rem;
-}
-
-button {
+header button {
   border: none;
   padding: 10px;
-  width: 3rem;
-  height: 3rem;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  background-color: black;
-  border-radius: 100%;
+  background-color: rgb(21, 20, 20);
+  border-radius: 1000px;
   color: white;
-  font-size: 1.5rem;
-}
-
-.card {
-  width: 15rem;
-  height: 15rem;
-  background-color: darkorange;
-  padding: 10px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: space-between;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-.date {
-  font-size: 0.75rem;
-  font-weight: bold;
+  font-size: 20px;
 }
 
 .cards-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.77);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal {
+  width: 750px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal button {
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 100%;
+  background-color: blueviolet;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+
+}
+
+.modal p {
+  margin-left: auto;
+  font-size: 20px;
+  z-index: 100000;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.close-button {
+  border: none;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: rgb(21, 20, 20);
+  border-radius: 1000px;
+  color: white;
 }
 </style>
