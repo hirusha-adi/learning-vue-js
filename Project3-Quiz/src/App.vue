@@ -2,10 +2,16 @@
   <div class="container">
     <header>
       <h1>Quizzes</h1>
-      <input type="text">
+      <input type="text" placeholder="Search...">
     </header>
     <div class="options-container">
-
+      <div class="card">
+        <img src="https://placehold.co/600x400" alt="image">
+        <div class="card-text">
+          <h2>Mathematics</h2>
+          <p>15 questions</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -33,5 +39,37 @@ header input {
   background-color: rgba(128, 128, 128, 0.1);
   padding: 10px;
   border-radius: 5px;
+}
+
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Card */
+
+.card {
+  width: 310px;
+  overflow: hidden;
+  border-radius: 2%;
+  box-shadow: 5px 5px 20px rbga(0, 0, 0, 0.9);
+  margin-bottom: 25px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  margin: 0;
+}
+
+.card .card-text {
+  padding: 0 5px;
+}
+
+.card .card-text h2 {
+  font-weight: bold;
 }
 </style>
