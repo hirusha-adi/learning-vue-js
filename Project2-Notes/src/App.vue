@@ -2,7 +2,7 @@
   <main>
     <div class="overlay">
       <div class="modal">
-        <p class="close-button">x</p>
+        <p>x</p>
         <textarea></textarea>
         <button>Add Note</button>
       </div>
@@ -135,16 +135,5 @@ textarea {
   height: 200px;
   padding: 5px;
   font-size: 20px;
-}
-
-.close-button {
-  border: none;
-  padding: 10px;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  background-color: rgb(21, 20, 20);
-  border-radius: 1000px;
-  color: white;
 }
 </style>
