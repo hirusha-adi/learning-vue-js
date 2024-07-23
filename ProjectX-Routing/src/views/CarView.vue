@@ -11,10 +11,15 @@ const car = cars.find(c => c.id === parseInt(route.params.id))
 </script>
 
 <template>
-    <h1>car view</h1>
-    <br>
-    <hr>
-    <p>{{ car.name }}</p>
-    <p>{{ car.price }}</p>
-    <p>{{ car.year }}</p>
+    <div v-if="car">
+        <h1>car view</h1>
+        <br>
+        <hr>
+        <p>{{ car.name }}</p>
+        <p>{{ car.price }}</p>
+        <p>{{ car.year }}</p>
+    </div>
+    <div v-else>
+        <h1>car not found</h1>
+    </div>
 </template>
